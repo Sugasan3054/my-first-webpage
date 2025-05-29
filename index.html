@@ -59,6 +59,42 @@
         strong {
             color: #0e6655; /* 緑がかった色で強調 */
         }
+
+        .pokemon-button {
+            background-color: #2874a6;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .pokemon-button:hover {
+            background-color: #1a5276;
+        }
+
+        #pokemon-ranking {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #aed6f1;
+            border-radius: 8px;
+            background-color: #f8fcfd;
+            display: none; /* 初期状態では非表示 */
+        }
+
+        #pokemon-ranking img {
+            vertical-align: middle;
+            margin-left: 10px;
+            width: 50px; /* 画像のサイズを調整 */
+            height: auto;
+        }
+
+        #pokemon-ranking li {
+            margin-bottom: 10px;
+            list-style-type: none; /* デフォルトのリストマーカーを非表示 */
+        }
     </style>
 </head>
 <body>
@@ -69,7 +105,27 @@
         <p>私の名前は<strong>すがさん</strong>です。</p>
         <p>学部学科は<strong>理工学部応用情報工学科</strong>に所属しています。</p>
         <p>サークルは<strong>軽音楽部</strong>で活動しています。</p>
-        <p>好きなものは、<strong>ベースギター</strong>、<strong>Mrs. Green Apple</strong>、そして<strong>ポケモン</strong>です。</p>
+        <p>好きなものは、<strong>ベースギター</strong>、<strong>Mrs. Green Apple</strong>、そして<button class="pokemon-button" onclick="togglePokemonRanking()">ポケモン</button>です。</p>
+
+        <div id="pokemon-ranking">
+            <h3>好きなポケモンランキング</h3>
+            <ul>
+                <li>1位: ホゲータ <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0909.png" alt="ホゲータ"></li>
+                <li>2位: コダック <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0054.png" alt="コダック"></li>
+                <li>3位: ミジュマル <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0501.png" alt="ミジュマル"></li>
+            </ul>
+        </div>
     </div>
+
+    <script>
+        function togglePokemonRanking() {
+            const rankingDiv = document.getElementById('pokemon-ranking');
+            if (rankingDiv.style.display === 'none' || rankingDiv.style.display === '') {
+                rankingDiv.style.display = 'block';
+            } else {
+                rankingDiv.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
