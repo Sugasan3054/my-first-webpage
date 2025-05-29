@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>僕の最初のホームページ</title>
+    <style>
+        body {
+            background-color: #e0f2f7; /* 薄い青色 */
+            color: #333333; /* 見やすい色 */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            position: relative; /* 背景画像の配置のために必要 */
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%; /* 適宜調整 */
+            height: 80%; /* 適宜調整 */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bird_silhouette_2.svg/1200px-Bird_silhouette_2.svg.png'); /* 青い鳥のシルエットのURL */
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.1; /* 透明度を調整 */
+            z-index: -1; /* 他のコンテンツの下に配置 */
+        }
+
+        h1 {
+            color: #1a5276; /* 濃い目の青 */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2874a6; /* やや濃い青 */
+            border-bottom: 2px solid #aed6f1;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #0e6655; /* 緑がかった色で強調 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ホームページにようこそ!</h1>
+
+        <h2>僕の最初のホームページ</h2>
+        <p>私の名前は<strong>すがさん</strong>です。</p>
+        <p>学部学科は<strong>理工学部応用情報工学科</strong>に所属しています。</p>
+        <p>サークルは<strong>軽音楽部</strong>で活動しています。</p>
+        <p>好きなものは、<strong>ベースギター</strong>、<strong>Mrs. Green Apple</strong>、そして<strong>ポケモン</strong>です。</p>
+    </div>
+</body>
+</html>
