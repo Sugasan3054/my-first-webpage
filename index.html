@@ -64,7 +64,7 @@
             color: #0e6655; /* 緑がかった色で強調 */
         }
 
-        .music-button {
+        .toggle-button { /* ポケモンとMrs. Green Appleで共通のスタイル */
             background-color: #2874a6;
             color: white;
             padding: 8px 15px;
@@ -75,11 +75,11 @@
             transition: background-color 0.3s ease;
         }
 
-        .music-button:hover {
+        .toggle-button:hover {
             background-color: #1a5276;
         }
 
-        #music-ranking {
+        .ranking-container { /* ランキング表示部分の共通スタイル */
             margin-top: 20px;
             padding: 15px;
             border: 1px solid #aed6f1;
@@ -88,7 +88,14 @@
             display: none; /* 初期状態では非表示 */
         }
 
-        #music-ranking li {
+        .ranking-container img {
+            vertical-align: middle;
+            margin-left: 10px;
+            width: 50px; /* 画像のサイズを調整 */
+            height: auto;
+        }
+
+        .ranking-container li {
             margin-bottom: 10px;
             list-style-type: none; /* デフォルトのリストマーカーを非表示 */
         }
@@ -102,9 +109,9 @@
         <p>私の名前は<strong>すがさん</strong>です。</p>
         <p>学部学科は<strong>理工学部応用情報工学科</strong>に所属しています。</p>
         <p>サークルは<strong>軽音楽部</strong>で活動しています。</p>
-        <p>好きなものは、<strong>ベースギター</strong>、<button class="music-button" onclick="toggleMusicRanking()">Mrs. Green Apple</button>です。</p>
+        <p>好きなものは、<strong>ベースギター</strong>、<button class="toggle-button" onclick="toggleMusicRanking()">Mrs. Green Apple</button>、そして<button class="toggle-button" onclick="togglePokemonRanking()">ポケモン</button>です。</p>
 
-        <div id="music-ranking">
+        <div id="music-ranking" class="ranking-container">
             <h3>好きなMrs. Green Appleの曲</h3>
             <ul>
                 <li>1位: 青と夏</li>
@@ -112,11 +119,29 @@
                 <li>3位: Cheers</li>
             </ul>
         </div>
+
+        <div id="pokemon-ranking" class="ranking-container">
+            <h3>好きなポケモンランキング</h3>
+            <ul>
+                <li>1位: ホゲータ <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0909.png" alt="ホゲータ"></li>
+                <li>2位: コダック <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0054.png" alt="コダック"></li>
+                <li>3位: ミジュマル <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/0501.png" alt="ミジュマル"></li>
+            </ul>
+        </div>
     </div>
 
     <script>
         function toggleMusicRanking() {
             const rankingDiv = document.getElementById('music-ranking');
+            if (rankingDiv.style.display === 'none' || rankingDiv.style.display === '') {
+                rankingDiv.style.display = 'block';
+            } else {
+                rankingDiv.style.display = 'none';
+            }
+        }
+
+        function togglePokemonRanking() {
+            const rankingDiv = document.getElementById('pokemon-ranking');
             if (rankingDiv.style.display === 'none' || rankingDiv.style.display === '') {
                 rankingDiv.style.display = 'block';
             } else {
